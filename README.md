@@ -5,7 +5,7 @@ Anki decks with the complete vocabulary of the official Goethe-Institut word lis
 noun gender colours, plurals, genitive, verb forms, every official example sentence with
 translation and German audio.
 
-**⬇ [Download the latest release](https://github.com/lernen-deutsch/goethe-a1-b1-anki/releases/latest)** —
+**⬇ [Download the latest release](https://github.com/gemeinsam-deutsch-lernen/goethe-a1-b1-anki/releases/latest)** —
 `Deutsch_Goethe_A1-B1_RU.apkg` (Russian) · `Deutsch_Goethe_A1-B1_UK.apkg` (Ukrainian).
 Import: Anki → File → Import.
 
@@ -28,7 +28,7 @@ Manual: <https://docs.ankiweb.net/>.
 
 1. Install Anki (see above).
 2. Download `Deutsch_Goethe_A1-B1_RU.apkg` or `Deutsch_Goethe_A1-B1_UK.apkg` from the
-   [latest release](https://github.com/lernen-deutsch/goethe-a1-b1-anki/releases/latest).
+   [latest release](https://github.com/gemeinsam-deutsch-lernen/goethe-a1-b1-anki/releases/latest).
 3. Open the file: double-click it on the desktop, or *File → Import* in Anki; on Android/iOS open it
    with AnkiDroid/AnkiMobile ([importing deck packages](https://docs.ankiweb.net/importing/packaged-decks.html)).
 4. Optional: sync with a free AnkiWeb account to learn on all your devices.
@@ -58,13 +58,13 @@ The ▶ buttons play German audio for the word and for every example sentence.
 > множественное число, генитив, формы глаголов, все официальные примеры с переводом и озвучкой.
 > [Anki](https://apps.ankiweb.net/) — бесплатное приложение для карточек с интервальным повторением
 > (Windows, macOS, Linux, Android; на iPhone — платное AnkiMobile). Скачайте файл `…_RU.apkg` из
-> [последнего релиза](https://github.com/lernen-deutsch/goethe-a1-b1-anki/releases/latest) и откройте его в Anki.
+> [последнего релиза](https://github.com/gemeinsam-deutsch-lernen/goethe-a1-b1-anki/releases/latest) и откройте его в Anki.
 >
 > 🇺🇦 **Колоди Anki з усією лексикою офіційних списків Goethe-Institut A1–B1:** колір роду, множина,
 > генітив, форми дієслів, усі офіційні приклади з перекладом та озвученням.
 > [Anki](https://apps.ankiweb.net/) — безкоштовний застосунок для карток з інтервальним повторенням
 > (Windows, macOS, Linux, Android; на iPhone — платний AnkiMobile). Завантажте файл `…_UK.apkg` з
-> [останнього релізу](https://github.com/lernen-deutsch/goethe-a1-b1-anki/releases/latest) і відкрийте його в Anki.
+> [останнього релізу](https://github.com/gemeinsam-deutsch-lernen/goethe-a1-b1-anki/releases/latest) і відкрийте його в Anki.
 
 This is an unofficial, non-commercial study project and is not affiliated with or endorsed by
 the Goethe-Institut. See [Sources and licences](#sources-and-licences).

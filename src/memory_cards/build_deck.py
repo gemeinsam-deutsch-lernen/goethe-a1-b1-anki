@@ -15,7 +15,7 @@ import genanki
 from .translations import load as load_translations
 from .tts import audio_name, speakable, word_text
 
-REPO_URL = "https://github.com/lernen-deutsch/goethe-a1-b1-anki"
+REPO_URL = "https://github.com/gemeinsam-deutsch-lernen/goethe-a1-b1-anki"
 DECK_DESCRIPTION = f"""Vocabulary of the official Goethe-Institut word lists:
 <a href="https://www.goethe.de/pro/relaunch/prf/de/A1_SD1_Wortliste_02.pdf">Start Deutsch 1 (A1)</a>,
 <a href="https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_A2_Wortliste.pdf">Goethe-Zertifikat A2</a>,
