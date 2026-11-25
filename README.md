@@ -9,17 +9,62 @@ translation and German audio.
 `Deutsch_Goethe_A1-B1_RU.apkg` (Russian) · `Deutsch_Goethe_A1-B1_UK.apkg` (Ukrainian).
 Import: Anki → File → Import.
 
-| DE → RU (back) | DE → RU (back, dark mode) |
-|---|---|
-| ![der Tisch](docs/screenshots/noun-de-ru-back.png) | ![fahren](docs/screenshots/verb-de-ru-back.png) |
-| **RU → DE (front)** | **UK → DE (back)** |
-| ![вокзал](docs/screenshots/ru-de-front.png) | ![die Frage](docs/screenshots/uk-de-back.png) |
+## What is Anki?
 
-> 🇷🇺 Колоды Anki со всем словарём официальных списков Goethe-Institut A1–B1: цвет рода,
+[Anki](https://apps.ankiweb.net/) is a free flashcard app that uses **spaced repetition**: every card
+comes back just before you would forget it, so a few minutes a day are enough to keep thousands of
+words in long-term memory ([how it works](https://docs.ankiweb.net/background.html)).
+
+| Platform | App | Price |
+|---|---|---|
+| Windows, macOS, Linux | [Anki Desktop](https://apps.ankiweb.net/) | free |
+| Android | [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) ([F-Droid](https://f-droid.org/packages/com.ichi2.anki/)) | free |
+| iPhone, iPad | [AnkiMobile](https://apps.apple.com/app/ankimobile-flashcards/id373493387) | paid (funds Anki development) |
+| Browser | [AnkiWeb](https://ankiweb.net/) — free sync between devices, reviews in the browser | free |
+
+Manual: <https://docs.ankiweb.net/>.
+
+## Getting started
+
+1. Install Anki (see above).
+2. Download `Deutsch_Goethe_A1-B1_RU.apkg` or `Deutsch_Goethe_A1-B1_UK.apkg` from the
+   [latest release](https://github.com/lernen-deutsch/goethe-a1-b1-anki/releases/latest).
+3. Open the file: double-click it on the desktop, or *File → Import* in Anki; on Android/iOS open it
+   with AnkiDroid/AnkiMobile ([importing deck packages](https://docs.ankiweb.net/importing/packaged-decks.html)).
+4. Optional: sync with a free AnkiWeb account to learn on all your devices.
+5. Choose your daily pace in the [deck options](https://docs.ankiweb.net/deck-options.html).
+   Example for **3 words a day** (one noun, one verb, one other word, each in both directions):
+   * sub-decks `1 Nomen`, `2 Verben`, `3 Andere`: *New cards/day* = 2, *New card gather order* = Ascending position;
+   * parent deck: *New cards/day* = 6, *New card gather order* = Deck.
+
+New cards come in the order A1 → A2 → B1. Updating to a newer release is safe: import the new file and
+your review history is kept.
+
+## Screenshots
+
+| German → translation (front) | German → translation (back) |
+|---|---|
+| ![der Bahnhof, front](docs/screenshots/de-ru-front.png) | ![der Tisch, back](docs/screenshots/noun-de-ru-back.png) |
+| **Translation → German (front)** | **Ukrainian deck (back)** |
+| ![вокзал, front](docs/screenshots/ru-de-front.png) | ![die Frage, back](docs/screenshots/uk-de-back.png) |
+| **Verb forms, dark mode** | **Phone width, dark mode** |
+| ![fahren](docs/screenshots/verb-de-ru-back.png) | ![der Bahnhof, phone](docs/screenshots/mobile-ru-de-back.png) |
+
+The ▶ buttons play German audio for the word and for every example sentence.
+
+## По-русски / Українською
+
+> 🇷🇺 **Колоды Anki со всем словарём официальных списков Goethe-Institut A1–B1:** цвет рода,
 > множественное число, генитив, формы глаголов, все официальные примеры с переводом и озвучкой.
+> [Anki](https://apps.ankiweb.net/) — бесплатное приложение для карточек с интервальным повторением
+> (Windows, macOS, Linux, Android; на iPhone — платное AnkiMobile). Скачайте файл `…_RU.apkg` из
+> [последнего релиза](https://github.com/lernen-deutsch/goethe-a1-b1-anki/releases/latest) и откройте его в Anki.
 >
-> 🇺🇦 Колоди Anki з усією лексикою офіційних списків Goethe-Institut A1–B1: колір роду,
-> множина, генітив, форми дієслів, усі офіційні приклади з перекладом та озвученням.
+> 🇺🇦 **Колоди Anki з усією лексикою офіційних списків Goethe-Institut A1–B1:** колір роду, множина,
+> генітив, форми дієслів, усі офіційні приклади з перекладом та озвученням.
+> [Anki](https://apps.ankiweb.net/) — безкоштовний застосунок для карток з інтервальним повторенням
+> (Windows, macOS, Linux, Android; на iPhone — платний AnkiMobile). Завантажте файл `…_UK.apkg` з
+> [останнього релізу](https://github.com/lernen-deutsch/goethe-a1-b1-anki/releases/latest) і відкрийте його в Anki.
 
 This is an unofficial, non-commercial study project and is not affiliated with or endorsed by
 the Goethe-Institut. See [Sources and licences](#sources-and-licences).

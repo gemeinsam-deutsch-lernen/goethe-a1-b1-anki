@@ -30,12 +30,14 @@ PLAY = (
     'vertical-align:middle">▶</span>'
 )
 
-# (file name, entry id, lang, template side, dark mode)
+# (file name, entry id, lang, template side, dark mode, viewport width in CSS px)
 SHOTS = [
-    ("noun-de-ru-back.png", "noun:tisch:der", "ru", "de_back", False),
-    ("verb-de-ru-back.png", "verb:fahren", "ru", "de_back", True),
-    ("ru-de-front.png", "noun:bahnhof:der", "ru", "tr_front", False),
-    ("uk-de-back.png", "noun:frage:die", "uk", "tr_back", False),
+    ("noun-de-ru-back.png", "noun:tisch:der", "ru", "de_back", False, 560),
+    ("verb-de-ru-back.png", "verb:fahren", "ru", "de_back", True, 560),
+    ("ru-de-front.png", "noun:bahnhof:der", "ru", "tr_front", False, 560),
+    ("uk-de-back.png", "noun:frage:die", "uk", "tr_back", False, 560),
+    ("de-ru-front.png", "noun:bahnhof:der", "ru", "de_front", False, 560),
+    ("mobile-ru-de-back.png", "noun:bahnhof:der", "ru", "tr_back", True, 390),
 ]
 
 
@@ -55,8 +57,8 @@ def _chrome() -> str:
     raise SystemExit("Chrome/Chromium not found")
 
 
-def _trim(path: Path, bg: str, pad: int = 48) -> None:
-    """Cut the empty background below the card content."""
+def _trim(path: Path, bg: str, max_width: int, pad: int = 48) -> None:
+    """Crop to the card frame width and cut the empty background below the content."""
     from PIL import Image, ImageChops
 
     img = Image.open(path).convert("RGB")
@@ -64,15 +66,15 @@ def _trim(path: Path, bg: str, pad: int = 48) -> None:
     diff = ImageChops.difference(img, Image.new("RGB", img.size, color))
     bbox = diff.getbbox()
     if bbox:
-        img.crop((0, 0, img.width, min(img.height, bbox[3] + pad))).save(path, optimize=True)
+        img.crop((0, 0, min(img.width, max_width), min(img.height, bbox[3] + pad))).save(path, optimize=True)
 
 
-def render_all(data: Path, out_dir: Path, width: int = 560) -> list[Path]:
+def render_all(data: Path, out_dir: Path) -> list[Path]:
     entries = {e["id"]: e for e in json.loads((data / "entries.json").read_text(encoding="utf-8"))}
     out_dir.mkdir(parents=True, exist_ok=True)
     chrome = _chrome()
     written = []
-    for name, eid, lang, side, dark in SHOTS:
+    for name, eid, lang, side, dark, width in SHOTS:
         e = entries[eid]
         t = load_translations(data / "translations", lang)[eid]
         L = LANGS[lang]["label"]
@@ -85,8 +87,9 @@ def render_all(data: Path, out_dir: Path, width: int = 560) -> list[Path]:
         bg = "#1e1e1e" if dark else "#ffffff"
         page = (
             f'<!doctype html><html><head><meta charset="utf-8"><style>{CSS}'
-            f"body{{margin:0;padding:28px 20px;background:{bg};position:relative}}</style></head>"
-            f'<body class="card{" nightMode" if dark else ""}">{body}</body></html>'
+            f"body{{margin:0;background:{bg}}}"
+            f"#frame{{width:{width}px;box-sizing:border-box;padding:28px 20px;position:relative}}</style></head>"
+            f'<body class="card{" nightMode" if dark else ""}"><div id="frame">{body}</div></body></html>'
         )
         with tempfile.TemporaryDirectory() as tmp:
             html_path = Path(tmp) / "card.html"
@@ -95,10 +98,10 @@ def render_all(data: Path, out_dir: Path, width: int = 560) -> list[Path]:
             target = out_dir / name
             subprocess.run(
                 [chrome, "--headless=new", "--disable-gpu", "--hide-scrollbars",
-                 "--force-device-scale-factor=2", f"--window-size={width},{height}",
+                 "--force-device-scale-factor=2", f"--window-size={max(width, 600)},{height}",
                  f"--screenshot={target}", html_path.as_uri()],
                 check=True, capture_output=True,
             )
-        _trim(target, bg)
+        _trim(target, bg, width * 2)
         written.append(target)
     return written
