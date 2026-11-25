@@ -1,0 +1,50 @@
+{
+  "_comment": "Manual corrections for PDF layout/typo issues, keyed by 'LEVEL|raw head'. 'head' replaces the headword, 'merge_next' appends the next raw entry's examples, 'skip' drops the entry.",
+  "A1|Satz, -ä, e": {
+    "head": "der Satz, -ä, e"
+  },
+  "A1|(Kredit)-Karte, -n": {
+    "head": "die Kreditkarte, -n"
+  },
+  "B1|S-Bahn, -en": {
+    "head": "die S-Bahn, -en"
+  },
+  "B1|Ratschlag, ¨-e": {
+    "head": "der Ratschlag, ¨-e"
+  },
+  "B1|Volleyball": {
+    "head": "der Volleyball (Sg.)"
+  },
+  "B1|Golf, das Golfspiel": {
+    "head": "das Golf (Sg.)"
+  },
+  "B1|Früchte (CH) → D, A: Obst": {
+    "head": "die Früchte (Pl.) (CH) → D, A: Obst"
+  },
+  "B1|heraus-, raus- (heraus-) finden, findet": {
+    "head": "herausfinden, findet heraus, fand heraus, hat herausgefunden",
+    "merge_next": true
+  },
+  "B1|herunter-, runter- (herunter-)laden, lädt": {
+    "head": "herunterladen, lädt herunter, lud herunter, hat heruntergeladen",
+    "merge_next": true
+  },
+  "B1|(herunter-)fahren, fährt herunter, fuhr herunter, hat heruntergefahren": {
+    "head": "herunterfahren, fährt herunter, fuhr herunter, hat heruntergefahren"
+  },
+  "A2|dabei (sein), ist dabei, war dabei, ist dabei gewesen": {
+    "head": "dabei sein, ist dabei, war dabei, ist dabei gewesen"
+  },
+  "B1|(hinunter) runterwerfen, wirft runter, warf runter, hat runtergeworfen": {
+    "head": "runterwerfen, wirft runter, warf runter, hat runtergeworfen"
+  },
+  "B1|(sich etwas) aussuchen, sucht aus, suchte aus, hat ausgesucht": {
+    "head": "(sich) aussuchen, sucht aus, suchte aus, hat ausgesucht"
+  },
+  "B1|festnehmen nimmt fest, nahm fest, hat festgenommen.": {
+    "head": "festnehmen, nimmt fest, nahm fest, hat festgenommen"
+  },
+  "A2|sein, ist einverstanden, war einverstanden, ist einverstanden gewesen": {
+    "head": "einverstanden sein, ist einverstanden, war einverstanden, ist einverstanden gewesen"
+  }
+}
