@@ -96,6 +96,13 @@ def cmd_build(args) -> None:
     print(f"wrote {out} ({out.stat().st_size / 1e6:.1f} MB)")
 
 
+def cmd_screenshots(args) -> None:
+    from .screenshots import render_all
+
+    for p in render_all(DATA, ROOT / "docs" / "screenshots"):
+        print(f"wrote {p.relative_to(ROOT)}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(prog="mc", description="Goethe A1-B1 Anki deck builder")
     sub = ap.add_subparsers(required=True)
@@ -116,6 +123,7 @@ def main() -> None:
     d.add_argument("--voice", default="de_DE-thorsten-low")
     d.add_argument("--lang", choices=LANG_CHOICES, default="ru")
     d.set_defaults(f=cmd_build)
+    sub.add_parser("screenshots", help="render README card screenshots (needs Chrome)").set_defaults(f=cmd_screenshots)
     args = ap.parse_args()
     args.f(args)
 

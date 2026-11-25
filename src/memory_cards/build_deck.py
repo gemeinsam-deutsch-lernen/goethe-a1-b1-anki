@@ -15,6 +15,13 @@ import genanki
 from .translations import load as load_translations
 from .tts import audio_name, speakable, word_text
 
+REPO_URL = "https://github.com/lernen-deutsch/goethe-a1-b1-anki"
+DECK_DESCRIPTION = f"""Vocabulary of the official Goethe-Institut word lists:
+<a href="https://www.goethe.de/pro/relaunch/prf/de/A1_SD1_Wortliste_02.pdf">Start Deutsch 1 (A1)</a>,
+<a href="https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_A2_Wortliste.pdf">Goethe-Zertifikat A2</a>,
+<a href="https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_B1_Wortliste.pdf">Goethe-Zertifikat B1</a>
+— © Goethe-Institut e.V. Unofficial, non-commercial study material, not affiliated with the Goethe-Institut.<br>
+Grammar: Wiktionary via kaikki.org (CC BY-SA). Audio: Piper TTS. Source and updates: <a href="{REPO_URL}">{REPO_URL}</a>"""
 SUBDECKS = {"noun": "1 Nomen", "verb": "2 Verben", "other": "3 Andere"}
 POS_INDEX = {"noun": 1, "verb": 2, "other": 3}
 # Per target language: deck name, ID base and GUID namespace. Never change existing values:
@@ -155,6 +162,23 @@ def _sound(name: str) -> str:
     return f"[sound:{name}]"
 
 
+def note_fields(e: dict, t: dict, lang: str, clip) -> list[str]:
+    """Field values in model order; `clip(text)` returns a [sound:] tag (or "")."""
+    gender, word, forms, extra = _word_and_forms(e)
+    de = e["examples"]
+    tr = t[f"{lang}_examples"]
+    ex_de = "".join(f"<li>{_e(d)} {clip(d)}</li>" for d in de)
+    ex_tr = "".join(f"<li>{_e(r)}</li>" for r in tr)
+    pairs = "".join(
+        f'<li>{_e(d)} {clip(d)}<br><span class="ex-ru">{_e(r)}</span></li>' for d, r in zip(de, tr)
+    )
+    pairs_silent = "".join(
+        f'<li>{_e(d)}<br><span class="ex-ru">{_e(r)}</span></li>' for d, r in zip(de, tr)
+    )
+    return [e["id"], e["level"], gender, word, forms, extra, _e(t[lang]),
+            ex_de, ex_tr, pairs, pairs_silent, clip(word_text(e))]
+
+
 def build_package(data: Path, cache: Path, dist: Path, voice: str, lang: str = "ru") -> Path:
     cfg = LANG_CONFIG[lang]
     entries = json.loads((data / "entries.json").read_text(encoding="utf-8"))
@@ -163,43 +187,29 @@ def build_package(data: Path, cache: Path, dist: Path, voice: str, lang: str = "
 
     models = {p: _model(p, lang) for p in SUBDECKS}
     decks = {
-        p: genanki.Deck(cfg["deck_base"] + POS_INDEX[p], f'{cfg["deck"]}::{SUBDECKS[p]}')
+        p: genanki.Deck(
+            cfg["deck_base"] + POS_INDEX[p], f'{cfg["deck"]}::{SUBDECKS[p]}', description=DECK_DESCRIPTION
+        )
         for p in SUBDECKS
     }
     media: set[Path] = set()
     missing_audio = 0
     entries = sorted(entries, key=lambda e: LEVEL_ORDER[e["level"]])  # stable: keeps file order
 
+    def clip(text: str) -> str:
+        nonlocal missing_audio
+        name = audio_name(speakable(text), voice)
+        p = audio_dir / name
+        if not p.exists():
+            missing_audio += 1
+            return ""
+        media.add(p)
+        return _sound(name)
+
     for i, e in enumerate(entries):
-        t = tr[e["id"]]
-        gender, word, forms, extra = _word_and_forms(e)
-
-        def clip(text: str) -> str:
-            nonlocal missing_audio
-            name = audio_name(speakable(text), voice)
-            p = audio_dir / name
-            if not p.exists():
-                missing_audio += 1
-                return ""
-            media.add(p)
-            return _sound(name)
-
-        word_audio = clip(word_text(e))
-        de = e["examples"]
-        ru = t[f"{lang}_examples"]
-        ex_de = "".join(f"<li>{_e(d)} {clip(d)}</li>" for d in de)
-        ex_ru = "".join(f"<li>{_e(r)}</li>" for r in ru)
-        pairs = "".join(
-            f'<li>{_e(d)} {clip(d)}<br><span class="ex-ru">{_e(r)}</span></li>' for d, r in zip(de, ru)
-        )
-        pairs_silent = "".join(
-            f'<li>{_e(d)}<br><span class="ex-ru">{_e(r)}</span></li>' for d, r in zip(de, ru)
-        )
-        level = e["level"] if len(e["levels"]) == 1 else e["level"]
         note = genanki.Note(
             model=models[e["pos"]],
-            fields=[e["id"], level, gender, word, forms, extra, _e(t[lang]),
-                    ex_de, ex_ru, pairs, pairs_silent, word_audio],
+            fields=note_fields(e, tr[e["id"]], lang, clip),
             tags=["goethe", *e["levels"], f'pos::{e["pos"]}'],
             guid=genanki.guid_for(cfg["guid_ns"], e["id"]),
             due=i,
