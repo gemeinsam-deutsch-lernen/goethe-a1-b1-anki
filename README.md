@@ -35,12 +35,19 @@ Manual: <https://docs.ankiweb.net/>.
    with AnkiDroid/AnkiMobile ([importing deck packages](https://docs.ankiweb.net/importing/packaged-decks.html)).
 4. Optional: sync with a free AnkiWeb account to learn on all your devices.
 5. Choose your daily pace in the [deck options](https://docs.ankiweb.net/deck-options.html).
-   Example for **3 words a day** (one noun, one verb, one other word, each in both directions):
-   * sub-decks `1 Nomen`, `2 Verben`, `3 Andere`: *New cards/day* = 2, *New card gather order* = Ascending position;
-   * parent deck: *New cards/day* = 6, *New card gather order* = Deck.
+   Example for **4 words a day** (one noun, one regular verb, one strong verb, one other word, each in both directions):
+   * sub-decks `1 Nomen`, `2 Verben`, `2 Verben stark`, `3 Andere`: *New cards/day* = 2, *New card gather order* = Ascending position;
+   * parent deck: *New cards/day* = 8, *New card gather order* = Deck.
+
+   Sub-decks can share one options preset only if they use the same limits; give `2 Verben stark` its own preset
+   to change its pace separately.
 
 New cards come in the order A1 → A2 → B1. Updating to a newer release is safe: import the new file and
 your review history is kept.
+
+**Updating from v0.1.3 or older:** Anki keeps existing cards in the deck they are in, so the strong verbs stay in
+`2 Verben`. To move them once: *Browse* → search `tag:verb::strong` → select all → *Cards → Change Deck* →
+`2 Verben stark`.
 
 ## Screenshots
 
@@ -67,12 +74,13 @@ Two independent packages with the same German content:
 | `dist/Deutsch_Goethe_A1-B1_UK.apkg` | `Deutsch Goethe A1–B1 (UK)` | Ukrainian |
 
 They use different deck/model IDs and note GUIDs, so both can be imported side by side.
-Each deck has three sub-decks:
+Each deck has four sub-decks:
 
 | Sub-deck | Front/back content |
 |---|---|
 | `1 Nomen` | article + noun coloured by gender (**der** blue, **die** red, **das** green), full plural, genitive singular, feminine form, regional variants |
-| `2 Verben` | infinitive (`*` = strong/irregular), 3rd person singular, Präteritum, `hat`/`ist` + Partizip II |
+| `2 Verben` | regular verbs: infinitive, 3rd person singular, Präteritum, `hat`/`ist` + Partizip II |
+| `2 Verben stark` | strong/irregular verbs (`*`), same forms — a separate sub-deck so they can get their own daily limit |
 | `3 Andere` | adjectives, adverbs, prepositions, phrases, word-formation prefixes |
 
 Every note has two cards:
@@ -83,7 +91,7 @@ Every note has two cards:
 All official example sentences are included (merged across levels, duplicates removed).
 German audio (word and every example) is synthesised locally with [Piper](https://github.com/OHF-Voice/piper1-gpl)
 (`de_DE-thorsten-low`), encoded as mono MP3 so it plays on Anki Desktop, AnkiDroid and AnkiMobile.
-Tags: `goethe`, `A1`/`A2`/`B1` (every level the word appears in), `pos::noun|verb|other`.
+Tags: `goethe`, `A1`/`A2`/`B1` (every level the word appears in), `pos::noun|verb|other`, `verb::strong`.
 New cards are ordered A1 → A2 → B1. Note GUIDs are stable, so re-importing an updated package updates notes in place.
 
 ## Build

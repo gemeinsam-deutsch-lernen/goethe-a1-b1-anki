@@ -36,12 +36,18 @@ Handbuch: <https://docs.ankiweb.net/>.
    AnkiDroid/AnkiMobile öffnen ([Decks importieren](https://docs.ankiweb.net/importing/packaged-decks.html)).
 4. Optional: mit einem kostenlosen AnkiWeb-Konto synchronisieren, um auf allen Geräten zu lernen.
 5. Das Tagespensum in den [Stapeloptionen](https://docs.ankiweb.net/deck-options.html) festlegen.
-   Beispiel für **3 Wörter pro Tag** (ein Nomen, ein Verb, ein anderes Wort, jeweils in beide Richtungen):
-   * Unterstapel `1 Nomen`, `2 Verben`, `3 Andere`: *Neue Karten/Tag* = 2, *Reihenfolge beim Sammeln neuer Karten* = Aufsteigende Position;
-   * übergeordneter Stapel: *Neue Karten/Tag* = 6, *Reihenfolge beim Sammeln neuer Karten* = Stapel.
+   Beispiel für **4 Wörter pro Tag** (ein Nomen, ein regelmäßiges Verb, ein starkes Verb, ein anderes Wort, jeweils in beide Richtungen):
+   * Unterstapel `1 Nomen`, `2 Verben`, `2 Verben stark`, `3 Andere`: *Neue Karten/Tag* = 2, *Reihenfolge beim Sammeln neuer Karten* = Aufsteigende Position;
+   * übergeordneter Stapel: *Neue Karten/Tag* = 8, *Reihenfolge beim Sammeln neuer Karten* = Stapel.
+
+   Wer das Tempo für `2 Verben stark` getrennt einstellen will, gibt diesem Unterstapel eine eigene Optionsgruppe.
 
 Neue Karten kommen in der Reihenfolge A1 → A2 → B1. Eine neuere Version kann gefahrlos importiert
 werden: Der Lernfortschritt bleibt erhalten.
+
+**Update von v0.1.3 oder älter:** Anki lässt vorhandene Karten in ihrem Stapel, die starken Verben bleiben also in
+`2 Verben`. Einmalig verschieben: *Durchsuchen* → Suche `tag:verb::strong` → alle auswählen → *Karten → Stapel ändern* →
+`2 Verben stark`.
 
 ## Screenshots
 
@@ -62,12 +68,13 @@ Die ▶-Schaltflächen spielen das Wort und jeden Beispielsatz auf Deutsch ab.
 | `Deutsch_Goethe_A1-B1_RU.apkg` | `Deutsch Goethe A1–B1 (RU)` | Russisch |
 | `Deutsch_Goethe_A1-B1_UK.apkg` | `Deutsch Goethe A1–B1 (UK)` | Ukrainisch |
 
-Beide Decks haben denselben deutschen Inhalt und können parallel verwendet werden. Jedes Deck hat drei Unterstapel:
+Beide Decks haben denselben deutschen Inhalt und können parallel verwendet werden. Jedes Deck hat vier Unterstapel:
 
 | Unterstapel | Inhalt |
 |---|---|
 | `1 Nomen` | Artikel + Nomen in Genusfarbe (**der** blau, **die** rot, **das** grün), Plural, Genitiv Singular, weibliche Form, regionale Varianten |
-| `2 Verben` | Infinitiv (`*` = stark/unregelmäßig), 3. Person Singular, Präteritum, `hat`/`ist` + Partizip II |
+| `2 Verben` | regelmäßige Verben: Infinitiv, 3. Person Singular, Präteritum, `hat`/`ist` + Partizip II |
+| `2 Verben stark` | starke/unregelmäßige Verben (`*`), dieselben Formen — eigener Unterstapel mit eigenem Tageslimit |
 | `3 Andere` | Adjektive, Adverbien, Präpositionen, Wendungen, Wortbildungspräfixe |
 
 Jede Notiz hat zwei Karten:
@@ -78,7 +85,7 @@ Jede Notiz hat zwei Karten:
 Alle offiziellen Beispielsätze sind enthalten. Die deutsche Aussprache wird lokal mit
 [Piper](https://github.com/OHF-Voice/piper1-gpl) (`de_DE-thorsten-low`) erzeugt und als MP3 gespeichert,
 damit sie in Anki Desktop, AnkiDroid und AnkiMobile funktioniert.
-Tags: `goethe`, `A1`/`A2`/`B1`, `pos::noun|verb|other`.
+Tags: `goethe`, `A1`/`A2`/`B1`, `pos::noun|verb|other`, `verb::strong`.
 
 Die Übersetzungen sind maschinell unterstützt; Fehler bitte über [Issues](https://github.com/gemeinsam-deutsch-lernen/goethe-a1-b1-anki/issues) melden.
 

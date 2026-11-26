@@ -22,8 +22,18 @@ DECK_DESCRIPTION = f"""Vocabulary of the official Goethe-Institut word lists:
 <a href="https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_B1_Wortliste.pdf">Goethe-Zertifikat B1</a>
 — © Goethe-Institut e.V. Unofficial, non-commercial study material, not affiliated with the Goethe-Institut.<br>
 Grammar: Wiktionary via kaikki.org (CC BY-SA). Audio: Piper TTS. Source and updates: <a href="{REPO_URL}">{REPO_URL}</a>"""
-SUBDECKS = {"noun": "1 Nomen", "verb": "2 Verben", "other": "3 Andere"}
+SUBDECKS = {"noun": "1 Nomen", "verb": "2 Verben", "strong": "2 Verben stark", "other": "3 Andere"}
 POS_INDEX = {"noun": 1, "verb": 2, "other": 3}
+DECK_INDEX = {**POS_INDEX, "strong": 4}  # deck IDs; never renumber existing ones
+
+
+def _subdeck(e: dict) -> str:
+    """Strong/irregular verbs get their own sub-deck so they can have their own daily limit."""
+    return "strong" if e["pos"] == "verb" and e["strong"] else e["pos"]
+
+
+def _tags(e: dict) -> list[str]:
+    return ["goethe", *e["levels"], f'pos::{e["pos"]}'] + (["verb::strong"] if _subdeck(e) == "strong" else [])
 # Per target language: deck name, ID base and GUID namespace. Never change existing values:
 # Anki matches decks/models by ID and notes by GUID when re-importing.
 LANG_CONFIG = {
@@ -193,12 +203,12 @@ def build_package(data: Path, cache: Path, dist: Path, voice: str, lang: str = "
         )
     audio_dir = cache / "audio"
 
-    models = {p: _model(p, lang) for p in SUBDECKS}
+    models = {p: _model(p, lang) for p in POS_INDEX}
     decks = {
-        p: genanki.Deck(
-            cfg["deck_base"] + POS_INDEX[p], f'{cfg["deck"]}::{SUBDECKS[p]}', description=DECK_DESCRIPTION
+        d: genanki.Deck(
+            cfg["deck_base"] + DECK_INDEX[d], f'{cfg["deck"]}::{SUBDECKS[d]}', description=DECK_DESCRIPTION
         )
-        for p in SUBDECKS
+        for d in SUBDECKS
     }
     media: set[Path] = set()
     missing_audio = 0
@@ -218,11 +228,11 @@ def build_package(data: Path, cache: Path, dist: Path, voice: str, lang: str = "
         note = genanki.Note(
             model=models[e["pos"]],
             fields=note_fields(e, tr[e["id"]], lang, clip),
-            tags=["goethe", *e["levels"], f'pos::{e["pos"]}'],
+            tags=_tags(e),
             guid=genanki.guid_for(cfg["guid_ns"], e["id"]),
             due=i,
         )
-        decks[e["pos"]].add_note(note)
+        decks[_subdeck(e)].add_note(note)
 
     if missing_audio:
         print(f"warning: {missing_audio} audio clips missing (run `mc tts`)")

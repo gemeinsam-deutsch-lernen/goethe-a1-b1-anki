@@ -73,3 +73,14 @@ def test_hint_goes_to_back():
     fields = note_fields(e, {"id": e["id"], "ru": "раз", "hint": "mal = einmal",
                              "ru_examples": ["x"] * len(e["examples"])}, "ru", lambda text: "")
     assert "mal = einmal" in fields[5] and "mal" not in fields[6]
+
+
+def test_strong_verbs_subdeck_and_tag():
+    from memory_cards.build_deck import _subdeck, _tags
+
+    strong = [e for e in ENTRIES if e["pos"] == "verb" and e["strong"]]
+    assert strong
+    for e in ENTRIES:
+        is_strong = e["pos"] == "verb" and e["strong"]
+        assert (_subdeck(e) == "strong") == is_strong
+        assert ("verb::strong" in _tags(e)) == is_strong
