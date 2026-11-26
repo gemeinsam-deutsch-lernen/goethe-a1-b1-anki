@@ -1,5 +1,7 @@
 # Goethe A1–B1 Anki decks (DE ↔ RU / UK)
 
+**English** · [Deutsch](README.de.md) · [Українська](README.uk.md) · [Русский](README.ru.md)
+
 Anki decks with the complete vocabulary of the official Goethe-Institut word lists
 ([Start Deutsch 1 / A1][a1], [Goethe-Zertifikat A2][a2], [Goethe-Zertifikat B1][b1]):
 noun gender colours, plurals, genitive, verb forms, every official example sentence with
@@ -51,20 +53,6 @@ your review history is kept.
 | ![fahren](docs/screenshots/verb-de-ru-back.png) | ![der Bahnhof, phone](docs/screenshots/mobile-ru-de-back.png) |
 
 The ▶ buttons play German audio for the word and for every example sentence.
-
-## По-русски / Українською
-
-> 🇷🇺 **Колоды Anki со всем словарём официальных списков Goethe-Institut A1–B1:** цвет рода,
-> множественное число, генитив, формы глаголов, все официальные примеры с переводом и озвучкой.
-> [Anki](https://apps.ankiweb.net/) — бесплатное приложение для карточек с интервальным повторением
-> (Windows, macOS, Linux, Android; на iPhone — платное AnkiMobile). Скачайте файл `…_RU.apkg` из
-> [последнего релиза](https://github.com/gemeinsam-deutsch-lernen/goethe-a1-b1-anki/releases/latest) и откройте его в Anki.
->
-> 🇺🇦 **Колоди Anki з усією лексикою офіційних списків Goethe-Institut A1–B1:** колір роду, множина,
-> генітив, форми дієслів, усі офіційні приклади з перекладом та озвученням.
-> [Anki](https://apps.ankiweb.net/) — безкоштовний застосунок для карток з інтервальним повторенням
-> (Windows, macOS, Linux, Android; на iPhone — платний AnkiMobile). Завантажте файл `…_UK.apkg` з
-> [останнього релізу](https://github.com/gemeinsam-deutsch-lernen/goethe-a1-b1-anki/releases/latest) і відкрийте його в Anki.
 
 This is an unofficial, non-commercial study project and is not affiliated with or endorsed by
 the Goethe-Institut. See [Sources and licences](#sources-and-licences).
