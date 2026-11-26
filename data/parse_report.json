@@ -1,6 +1,5 @@
 {
  "kaikki_missing": [
-  "noun:Bescheid (bekommen",
   "noun:(E-)Mail",
   "noun:Fundsachen",
   "verb:möchten",
@@ -54,6 +53,7 @@
   "noun:zuhoerer:der",
   "other:irgend-prefix",
   "noun:kriminalpolizei:die",
+  "other:mal",
   "other:not-prefix",
   "other:oeko",
   "other:rueck-prefix",

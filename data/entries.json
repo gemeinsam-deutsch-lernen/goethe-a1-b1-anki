@@ -10392,26 +10392,6 @@
   "regional": ""
  },
  {
-  "id": "other:anmachen-anmelden",
-  "pos": "other",
-  "level": "A1",
-  "levels": [
-   "A1"
-  ],
-  "heads": [
-   "anmachen (sich) anmelden"
-  ],
-  "variants": [],
-  "examples": [
-   "Mach bitte das Licht an!",
-   "Wo kann ich mich anmelden?"
-  ],
-  "notes": [],
-  "word": "anmachen (sich) anmelden",
-  "pos_label": "",
-  "regional": ""
- },
- {
   "id": "other:arbeitslos",
   "pos": "other",
   "level": "A1",
@@ -10494,9 +10474,10 @@
    "Meine Eltern leben auf dem Land.",
    "Gestern waren wir auf einer Party.",
    "Auf unsere Anzeige in der Abendzeitung hat sich noch niemand gemeldet.",
-   "Meine Tochter kommt nächstes Jahr aufs Gymnasium. (D) (A, CH: ins)",
-   "Im Mai war ich auf Urlaub. (A) (D: in)",
-   "Ich bin schon seit zwei Stunden auf. 10.Komm herein, die Tür ist auf. (D) (A, CH: offen)"
+   "Meine Tochter kommt nächstes Jahr aufs Gymnasium.",
+   "Im Mai war ich auf Urlaub.",
+   "Ich bin schon seit zwei Stunden auf.",
+   "Komm herein, die Tür ist auf."
   ],
   "notes": [],
   "word": "auf",
@@ -12064,8 +12045,7 @@
    "Mir ist heute gar nicht gut.",
    "Wir hatten im Urlaub gutes Wetter.",
    "Heute ist das Wetter wieder besser.",
-   "Christine ist meine beste Freundin.",
-   "Guten Morgen! 10.Ein gutes neues Jahr! 11.Guten Appetit!"
+   "Christine ist meine beste Freundin."
   ],
   "notes": [],
   "word": "gut",
@@ -12390,9 +12370,9 @@
    "Meine Wohnung ist im dritten Stock.",
    "Wollen wir heute ins Einkaufszentrum gehen?",
    "Rufen Sie bitte in fünf Minuten noch einmal an.",
-   "Im Mai war ich in Urlaub. (D) (A: auf)",
+   "Im Mai war ich in Urlaub.",
    "Wir sind in einer schwierigen Lage.",
-   "Meine Tochter kommt nächstes Jahr ins Gymnasium. (A) (D: aufs)"
+   "Meine Tochter kommt nächstes Jahr ins Gymnasium."
   ],
   "notes": [],
   "word": "in",
@@ -13491,7 +13471,8 @@
    "Meine Freundin studiert, und abends arbeitet sie noch als Kellnerin.",
    "Es ist nicht mehr viel Zeit. Nur noch fünf Minuten.",
    "Ich habe nur noch 20 Euro.",
-   "Ist das Essen schon fertig. – Nein, es dauert noch ein paar Minuten. 10.Ist Amadeo schon da? – Vielleicht kommt er noch."
+   "Ist das Essen schon fertig. – Nein, es dauert noch ein paar Minuten.",
+   "Ist Amadeo schon da? – Vielleicht kommt er noch."
   ],
   "notes": [],
   "word": "noch",
@@ -14098,7 +14079,7 @@
    "Dauert es lange? – Eine Stunde oder so kann es schon dauern.",
    "Ich hatte kein Geld dabei. Da haben sie mich so hineingelassen.",
    "So, jetzt bin ich fertig. Was machen wir jetzt?",
-   "Fahren Sie bitte nicht so schnell! 10.Meine Frau ist so groß wie ich. 11.Was macht ihr denn so?"
+   "Was macht ihr denn so?"
   ],
   "notes": [],
   "word": "so",
@@ -15076,7 +15057,8 @@
    "Gehen Ihre Kinder schon/noch zur Schule?",
    "Bitte zwanzig Briefmarken zu 55 Cent.",
    "Unsere Mannschaft hat 2 zu 1 gewonnen.",
-   "Ich habe vor, mir ein neues Auto zu kaufen. 10.Hast du etwas zu trinken für mich?"
+   "Ich habe vor, mir ein neues Auto zu kaufen.",
+   "Hast du etwas zu trinken für mich?"
   ],
   "notes": [],
   "word": "zu",
@@ -15310,6 +15292,38 @@
   "praeteritum": "kaufte",
   "aux": "hat",
   "partizip2": "gekauft",
+  "strong": false,
+  "verb_class": "weak",
+  "prep": "",
+  "verb_note": "",
+  "regional": ""
+ },
+ {
+  "id": "verb:anmelden",
+  "pos": "verb",
+  "level": "A1",
+  "levels": [
+   "A1",
+   "A2",
+   "B1"
+  ],
+  "heads": [
+   "(sich) anmelden",
+   "anmelden (sich), meldet an, hat angemeldet",
+   "anmelden, meldet an, meldete an, hat angemeldet"
+  ],
+  "variants": [],
+  "examples": [
+   "Wo kann ich mich anmelden?",
+   "Eine Anmeldung für diesen Kurs ist nicht mehr möglich.",
+   "Für diesen Kurs müssen Sie sich unbedingt vorher anmelden."
+  ],
+  "notes": [],
+  "infinitive": "(sich) anmelden",
+  "er": "meldet an",
+  "praeteritum": "meldete an",
+  "aux": "hat",
+  "partizip2": "angemeldet",
   "strong": false,
   "verb_class": "weak",
   "prep": "",
@@ -15843,6 +15857,34 @@
   "praeteritum": "kreuzte an",
   "aux": "hat",
   "partizip2": "angekreuzt",
+  "strong": false,
+  "verb_class": "weak",
+  "prep": "",
+  "verb_note": "",
+  "regional": ""
+ },
+ {
+  "id": "verb:anmachen",
+  "pos": "verb",
+  "level": "A1",
+  "levels": [
+   "A1",
+   "A2"
+  ],
+  "heads": [
+   "anmachen",
+   "anmachen, macht an, hat angemacht"
+  ],
+  "variants": [],
+  "examples": [
+   "Mach bitte das Licht an!"
+  ],
+  "notes": [],
+  "infinitive": "anmachen",
+  "er": "macht an",
+  "praeteritum": "machte an",
+  "aux": "hat",
+  "partizip2": "angemacht",
   "strong": false,
   "verb_class": "weak",
   "prep": "",
@@ -17421,7 +17463,13 @@
    "Am Anfang ging alles ganz gut.",
    "Geht Ihre Uhr richtig?",
    "Geht das bis morgen? – Nein, das geht nicht. Ich brauche mehr Zeit.",
-   "Der Mantel geht nicht mehr in den Koffer. 10.Das Fenster geht auf die Straße. 11.Geht es hier zum Zentrum? 12.Wie geht es Ihnen heute? 13.Ist das sehr teuer? – Es geht. 14.Um was geht es denn? 15.Warum geht das Licht nicht? 16.Ich weiß nicht, wie das geht."
+   "Der Mantel geht nicht mehr in den Koffer.",
+   "Das Fenster geht auf die Straße.",
+   "Geht es hier zum Zentrum?",
+   "Wie geht es Ihnen heute?",
+   "Ist das sehr teuer? – Es geht.",
+   "Um was geht es denn?",
+   "Warum geht das Licht nicht?"
   ],
   "notes": [],
   "infinitive": "gehen",
@@ -18385,7 +18433,7 @@
    "Mach dir bitte keine Sorgen.",
    "Was würden Sie an meiner Stelle machen?",
    "Tut mir leid. Die Küche hat schon geschlossen. – Da kann man nichts machen.",
-   "Entschuldigung! – Das macht doch nichts. 10.Das macht zusammen 20 Euro."
+   "Das macht zusammen 20 Euro."
   ],
   "notes": [],
   "infinitive": "machen",
@@ -19145,7 +19193,9 @@
    "Heute ist Montag.",
    "Der Termin beim Zahnarzt ist erst übermorgen.",
    "Um 11 Uhr ist Pause.",
-   "Das Auto ist mir zu teuer. 10.Das ist schwer zu verstehen. 11.Mir ist kalt. 12.Mit Präposition wie: Das Licht ist an/aus."
+   "Das Auto ist mir zu teuer.",
+   "Das ist schwer zu verstehen.",
+   "Mit Präposition wie: Das Licht ist an/aus."
   ],
   "notes": [],
   "infinitive": "sein",
@@ -20580,29 +20630,32 @@
   "regional": ""
  },
  {
-  "id": "noun:bescheid-bekommen:der",
+  "id": "noun:bescheid:der",
   "pos": "noun",
   "level": "A2",
   "levels": [
-   "A2"
+   "A2",
+   "B1"
   ],
   "heads": [
-   "der Bescheid (bekommen/geben/sagen)"
+   "der Bescheid (bekommen/geben/sagen)",
+   "der Bescheid, -e"
   ],
   "variants": [],
   "examples": [
    "Kann Lisa in Heidelberg studieren? - Sie weiß es noch nicht. Sie bekommt erst nächste Woche Bescheid.",
    "Kannst du mir bis morgen Bescheid geben?",
-   "Ich frage Herrn Maier und sage Ihnen dann Bescheid."
+   "Ich frage Herrn Maier und sage Ihnen dann Bescheid.",
+   "Den endgültigen Bescheid erhalten Sie in etwa vier Wochen."
   ],
   "notes": [],
   "article": "der",
   "article2": "",
-  "word": "Bescheid (bekommen",
-  "plural": "",
-  "sg_only": true,
+  "word": "Bescheid",
+  "plural": "die Bescheide",
+  "sg_only": false,
   "pl_only": false,
-  "genitive": "",
+  "genitive": "des Bescheides",
   "feminine": "geben/sagen)",
   "regional": ""
  },
@@ -26653,8 +26706,7 @@
   "variants": [],
   "examples": [
    "Hast du keinen größeren Topf? Ich möchte Kartoffeln kochen.",
-   "Dieses Jahr haben wir keine Töpfe mit Blumen auf dem Balkon.",
-   "Hast du keinen größeren Topf? Ich möchte Kartoffeln kochen. → (CH: Pfanne)"
+   "Dieses Jahr haben wir keine Töpfe mit Blumen auf dem Balkon."
   ],
   "notes": [],
   "article": "der",
@@ -30341,7 +30393,7 @@
   "examples": [
    "Ist das Fenster im Bad noch offen?",
    "Ich glaube, der Supermarkt ist jetzt noch offen.",
-   "Komm rein. Die Haustür ist offen. (A) (D: auf)",
+   "Komm rein. Die Haustür ist offen.",
    "Im Sommer schlafe ich immer bei offenem Fenster.",
    "Ich habe mit meinem Kollegen ganz offen über mein Problem gesprochen.",
    "Einzelne Fragen sind noch offen."
@@ -32020,36 +32072,6 @@
   "regional": ""
  },
  {
-  "id": "verb:anmelden",
-  "pos": "verb",
-  "level": "A2",
-  "levels": [
-   "A2",
-   "B1"
-  ],
-  "heads": [
-   "anmelden (sich), meldet an, hat angemeldet",
-   "anmelden, meldet an, meldete an, hat angemeldet"
-  ],
-  "variants": [],
-  "examples": [
-   "Wo kann ich mich anmelden?",
-   "Eine Anmeldung für diesen Kurs ist nicht mehr möglich.",
-   "Für diesen Kurs müssen Sie sich unbedingt vorher anmelden."
-  ],
-  "notes": [],
-  "infinitive": "(sich) anmelden",
-  "er": "meldet an",
-  "praeteritum": "meldete an",
-  "aux": "hat",
-  "partizip2": "angemeldet",
-  "strong": false,
-  "verb_class": "weak",
-  "prep": "",
-  "verb_note": "",
-  "regional": ""
- },
- {
   "id": "verb:ausruhen",
   "pos": "verb",
   "level": "A2",
@@ -32499,32 +32521,6 @@
   "partizip2": "abgeschlossen",
   "strong": true,
   "verb_class": "class 2 strong",
-  "prep": "",
-  "verb_note": "",
-  "regional": ""
- },
- {
-  "id": "verb:anmachen",
-  "pos": "verb",
-  "level": "A2",
-  "levels": [
-   "A2"
-  ],
-  "heads": [
-   "anmachen, macht an, hat angemacht"
-  ],
-  "variants": [],
-  "examples": [
-   "Mach bitte das Licht an!"
-  ],
-  "notes": [],
-  "infinitive": "anmachen",
-  "er": "macht an",
-  "praeteritum": "machte an",
-  "aux": "hat",
-  "partizip2": "angemacht",
-  "strong": false,
-  "verb_class": "weak",
   "prep": "",
   "verb_note": "",
   "regional": ""
@@ -38554,31 +38550,6 @@
   "sg_only": false,
   "pl_only": false,
   "genitive": "des Berichtes/Berichts",
-  "feminine": "",
-  "regional": ""
- },
- {
-  "id": "noun:bescheid:der",
-  "pos": "noun",
-  "level": "B1",
-  "levels": [
-   "B1"
-  ],
-  "heads": [
-   "der Bescheid, -e"
-  ],
-  "variants": [],
-  "examples": [
-   "Den endgültigen Bescheid erhalten Sie in etwa vier Wochen."
-  ],
-  "notes": [],
-  "article": "der",
-  "article2": "",
-  "word": "Bescheid",
-  "plural": "die Bescheide",
-  "sg_only": false,
-  "pl_only": false,
-  "genitive": "des Bescheides",
   "feminine": "",
   "regional": ""
  },
@@ -64851,9 +64822,7 @@
    "mal"
   ],
   "variants": [],
-  "examples": [
-   "(siehe einmal)"
-  ],
+  "examples": [],
   "notes": [],
   "word": "mal",
   "pos_label": "Adv.",
@@ -66957,7 +66926,7 @@
   ],
   "variants": [],
   "examples": [
-   "Als Vorspeise nehme ich eine Suppe, aber dafür nehme ich keine Nachspeise. (D, A)"
+   "Als Vorspeise nehme ich eine Suppe, aber dafür nehme ich keine Nachspeise."
   ],
   "notes": [],
   "word": "Speise-/-speise, -n",

@@ -102,6 +102,8 @@ def parse_noun(head: str) -> dict | None:
         return None
     word = m.group("word").strip()
     word = re.sub(r"\s*\(.*?\)\s*$", "", word).strip() or word
+    if word.count("(") > word.count(")"):  # "Bescheid (bekommen/geben/sagen)" cut at "/"
+        word = word[: word.rindex("(")].strip()
     notation = (m.group("pl") or "").strip()
     rest = h[m.end():].strip(" ,/;")
     plural = None

@@ -179,7 +179,7 @@ def _head_continues(head_so_far: str, prev_line: str, line: str) -> bool:
     # ("das Abenteuer, -") and "all-" is a stem headword.
     if line.startswith("(") and not line.startswith("(sich)") and re.search(r"[a-zäöü]-,?$", head_so_far):
         return True  # "herunter-, runter-" / "(herunter-)laden, lädt"
-    if line.startswith("(sich)") and re.fullmatch(r"[a-zäöü]+n", head_so_far):
+    if re.match(r"\(sich\)\s*[(,]", line) and re.fullmatch(r"[a-zäöü]+n", head_so_far):
         return True  # "informieren" / "(sich) (über), informiert, ..."
     if line.startswith("(") and ")" not in line:
         return True  # "(bekommen/geben/" / "sagen)"
@@ -365,8 +365,26 @@ def _groups(e: RawEntry) -> list[str]:
     return [_NUMBERED.sub("", join_lines(g), count=1).strip() for g in groups]
 
 
+_REGION_TAIL = re.compile(r"(\s*→?\s*\((?:D|A|CH)(?:\s*,\s*(?:D|A|CH))*(?::[^)]*)?\))+\s*$")
+_SEE = re.compile(r"^\(siehe [^)]*\)$")
+
+
+def _clean_example(s: str) -> str:
+    """Drop regional markers printed after a sentence: '... in Urlaub. (D) (A: auf)'."""
+    return _REGION_TAIL.sub("", s).strip()
+
+
 def examples_of(e: RawEntry) -> list[str]:
-    return [s for s in _groups(e) if s and not _is_note(s)]
+    out = []
+    for g in _groups(e):
+        # A list number glued to the next sentence was not split: "... auf. 10.Komm herein, ..."
+        for s in re.split(r"(?<=[.!?])\s+\d{1,2}\.\s*(?=[A-ZÄÖÜ„])", g):
+            if not s or _is_note(s) or _SEE.match(s):
+                continue
+            s = _clean_example(s)
+            if s:
+                out.append(s)
+    return out
 
 
 def notes_of(e: RawEntry) -> list[str]:

@@ -165,6 +165,8 @@ def _sound(name: str) -> str:
 def note_fields(e: dict, t: dict, lang: str, clip) -> list[str]:
     """Field values in model order; `clip(text)` returns a [sound:] tag (or "")."""
     gender, word, forms, extra = _word_and_forms(e)
+    if t.get("hint"):  # German usage note, shown on the back only
+        extra = "<br>".join(x for x in (f'<i>{_e(t["hint"])}</i>', extra) if x)
     de = e["examples"]
     tr = t[f"{lang}_examples"]
     ex_de = "".join(f"<li>{_e(d)} {clip(d)}</li>" for d in de)
