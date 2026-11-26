@@ -15,13 +15,33 @@ CACHE = ROOT / "cache"
 DATA = ROOT / "data"
 DIST = ROOT / "dist"
 
-PDF_URLS = {
-    "A1_SD1_Wortliste_02.pdf": "https://www.goethe.de/pro/relaunch/prf/de/A1_SD1_Wortliste_02.pdf",
-    "Goethe-Zertifikat_A2_Wortliste.pdf": "https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_A2_Wortliste.pdf",
-    "Goethe-Zertifikat_B1_Wortliste.pdf": "https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_B1_Wortliste.pdf",
+# Expected SHA-256 of the PDFs data/entries.json was built from. A mismatch means the
+# Goethe-Institut published a new edition: re-run `mc parse` and review the diff.
+PDFS = {
+    "A1_SD1_Wortliste_02.pdf": (
+        "https://www.goethe.de/pro/relaunch/prf/de/A1_SD1_Wortliste_02.pdf",
+        "45fb648bc0ac02338f7898cae065953e320ab72ed0c14e13e0deffe6f1c5d64e",
+    ),
+    "Goethe-Zertifikat_A2_Wortliste.pdf": (
+        "https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_A2_Wortliste.pdf",
+        "c9ca0c96c4adb252f253e1cc648b95ea031e417911565db07f7102bccdbdb19e",
+    ),
+    "Goethe-Zertifikat_B1_Wortliste.pdf": (
+        "https://www.goethe.de/pro/relaunch/prf/de/Goethe-Zertifikat_B1_Wortliste.pdf",
+        "8860f7f0c916831b2365f66239a3ceba3be81ddba28e1224846ca8420807fe42",
+    ),
 }
 LANG_CHOICES = ("ru", "uk")
 KAIKKI_URL = "https://kaikki.org/dictionary/German/kaikki.org-dictionary-German.jsonl"
+TIMEOUT = 60  # seconds per socket operation
+
+
+def _sha256(path: Path) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        while chunk := f.read(1 << 20):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def _download(url: str, dest: Path) -> None:
@@ -31,18 +51,27 @@ def _download(url: str, dest: Path) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
     tmp = dest.with_suffix(dest.suffix + ".part")
     print(f"fetch   {url}")
-    with urllib.request.urlopen(url) as r, open(tmp, "wb") as f:
+    with urllib.request.urlopen(url, timeout=TIMEOUT) as r, open(tmp, "wb") as f:
         while chunk := r.read(1 << 20):
             f.write(chunk)
     tmp.rename(dest)
-    sha = hashlib.sha256(dest.read_bytes()).hexdigest() if dest.stat().st_size < 50 << 20 else "-"
-    print(f"saved   {dest.relative_to(ROOT)} sha256={sha}")
+    print(f"saved   {dest.relative_to(ROOT)}")
 
 
 def cmd_download(args) -> None:
-    for name, url in PDF_URLS.items():
-        _download(url, CACHE / "pdf" / name)
+    changed = []
+    for name, (url, sha) in PDFS.items():
+        dest = CACHE / "pdf" / name
+        _download(url, dest)
+        actual = _sha256(dest)
+        if actual != sha:
+            changed.append(f"{name}: expected {sha}, got {actual}")
     _download(KAIKKI_URL, CACHE / "kaikki" / "kaikki.org-dictionary-German.jsonl")
+    if changed:
+        msg = "\n".join(["PDF checksum mismatch (new edition of the word list?):", *changed])
+        if not args.allow_changed:
+            raise SystemExit(msg + "\nRe-run with --allow-changed, then `mc parse` and review the diff.")
+        print("warning: " + msg)
 
 
 def cmd_parse(args) -> None:
@@ -106,7 +135,9 @@ def cmd_screenshots(args) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser(prog="mc", description="Goethe A1-B1 Anki deck builder")
     sub = ap.add_subparsers(required=True)
-    sub.add_parser("download", help="fetch Goethe PDFs and the kaikki dump").set_defaults(f=cmd_download)
+    dl = sub.add_parser("download", help="fetch Goethe PDFs and the kaikki dump")
+    dl.add_argument("--allow-changed", action="store_true", help="accept PDFs with unexpected checksums")
+    dl.set_defaults(f=cmd_download)
     sub.add_parser("parse", help="PDFs + kaikki -> data/entries.json").set_defaults(f=cmd_parse)
     b = sub.add_parser("batches", help="split entries into translation batches")
     b.add_argument("--size", type=int, default=100)

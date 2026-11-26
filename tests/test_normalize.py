@@ -46,3 +46,12 @@ def test_split_regional():
 def test_speakable():
     assert speakable("Ich habe mir Musik (he)runtergeladen.") == "Ich habe mir Musik heruntergeladen."
     assert speakable("Darf ich Ihnen/dir helfen?") == "Darf ich Ihnen oder dir helfen?"
+
+
+def test_parse_verb_with_predicate():
+    # The er-form "ist zu" must not be mistaken for the Perfekt.
+    v = parse_verb("zu sein, ist zu, war zu, ist zu gewesen")
+    assert (v["infinitive"], v["er"], v["praeteritum"], v["aux"], v["partizip2"]) == (
+        "zu sein", "ist zu", "war zu", "ist", "zu gewesen")
+    v = parse_verb("vorhaben, hat vor, hatte vor, hat vorgehabt")
+    assert (v["er"], v["praeteritum"], v["aux"], v["partizip2"]) == ("hat vor", "hatte vor", "hat", "vorgehabt")

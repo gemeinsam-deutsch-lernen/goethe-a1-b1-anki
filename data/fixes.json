@@ -1,5 +1,5 @@
 {
-  "_comment": "Manual corrections for PDF layout/typo issues, keyed by 'LEVEL|raw head'. 'head' replaces the headword, 'merge_next' appends the next raw entry's examples, 'skip' drops the entry.",
+  "_comment": "Manual corrections for PDF layout/typo issues, keyed by 'LEVEL|raw head'. 'head' replaces the headword, 'merge_next' appends the next raw entry's examples, 'skip' drops the entry, 'examples'/'variants' replace the parsed lists, 'split' turns one raw entry into several ({head, examples}).",
   "A1|Satz, -ä, e": {
     "head": "der Satz, -ä, e"
   },
@@ -46,5 +46,92 @@
   },
   "A2|sein, ist einverstanden, war einverstanden, ist einverstanden gewesen": {
     "head": "einverstanden sein, ist einverstanden, war einverstanden, ist einverstanden gewesen"
+  },
+  "A2|der Haushalt, -e": {
+    "examples": [
+      "Wer macht bei euch den Haushalt? - Meine Frau und ich machen den Haushalt zusammen: Ich wasche die Wäsche und sie putzt und räumt auf."
+    ]
+  },
+  "A2|der Gruß, ¨-e": {
+    "examples": [
+      "Viele Grüße an Ihre Frau.",
+      "Liebe Grüße",
+      "Mit freundlichen Grüßen"
+    ]
+  },
+  "A2|mal / das Mal": {
+    "split": [
+      {
+        "head": "mal",
+        "examples": [
+          "Sag mal, wie gefällt dir mein neues Kleid?"
+        ]
+      },
+      {
+        "head": "das Mal, -e",
+        "examples": [
+          "Das erste Mal war ich vor fünf Jahren in England.",
+          "Tschüss, bis zum nächsten Mal!"
+        ]
+      }
+    ]
+  },
+  "B1|zu sein, ist zu, war zu, ist zu gewesen": {
+    "_note": "PDF typo 'die die meisten'",
+    "examples": [
+      "Am Sonntag sind die meisten Läden zu.",
+      "Das Fenster war nicht zu."
+    ]
+  },
+  "B1|der/das (Schlag-)Obers (A) → D: (Schlag-)Sahne; CH: (Schlag-)Rahm": {
+    "head": "das/der (Schlag-)Obers (A) → D: (Schlag-)Sahne; CH: (Schlag-)Rahm"
+  },
+  "B1|leid tun, tut leid, tat leid, hat leidgetan": {
+    "head": "leidtun/leid tun, tut leid, tat leid, hat leidgetan"
+  },
+  "B1|die Nord-/Ostsee": {
+    "split": [
+      {
+        "head": "die Nordsee (Sg.)",
+        "examples": [
+          "Warst du schon mal an der Nordsee?"
+        ]
+      },
+      {
+        "head": "die Ostsee (Sg.)",
+        "examples": [
+          "Warst du schon mal an der Ostsee?"
+        ]
+      }
+    ]
+  },
+  "B1|sehen, sieht, sah, hat gesehen": {
+    "_note": "first example belongs to 'die Nord-/Ostsee'",
+    "examples": [
+      "Ich sehe nicht gut. Ich brauche eine Brille.",
+      "Ich habe einen schönen Film gesehen.",
+      "Wir haben uns lange nicht gesehen.",
+      "Darf ich mal Ihren Ausweis sehen?",
+      "Sieh mal! Es schneit.",
+      "Ich komme gleich wieder, ich muss mal schnell nach dem Essen sehen.",
+      "Was machst du im Urlaub? – Ich weiß noch nicht. Mal sehen.",
+      "Du siehst deiner Mutter sehr ähnlich."
+    ]
+  },
+  "B1|Kriminal-": {
+    "examples": []
+  },
+  "B1|die Kriminalpolizei": {
+    "examples": [
+      "Ein Nachbar von uns arbeitet bei der Kriminalpolizei."
+    ]
+  },
+  "B1|der Steward, -s": {
+    "variants": [
+      "die Stewardess, -en"
+    ]
+  },
+  "B1|die Stewardess, -en": {
+    "skip": true
   }
 }

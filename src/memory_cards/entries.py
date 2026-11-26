@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import json
 import re
 from pathlib import Path
@@ -147,7 +148,18 @@ def build(
                     i += 1
                 if fix.get("head"):
                     raw.head_lines = [fix["head"]]
-            recs.append(_record(raw, lv))
+            parts = fix.get("split") if fix else None
+            for part in parts or [fix or {}]:
+                if parts:
+                    raw = copy.copy(raw)
+                    raw.head_lines = [part["head"]]
+                    raw.variants = []
+                rec = _record(raw, lv)
+                if "examples" in part:
+                    rec["examples"] = list(part["examples"])
+                if "variants" in part:
+                    rec["variants"] = list(part["variants"])
+                recs.append(rec)
             i += 1
 
     overrides = {}
@@ -163,12 +175,21 @@ def build(
     index = load_or_build_index(kaikki_dir, words)
 
     # Resolve candidates: verb without forms, or "other".
+    # A1 lists verbs without forms ("gefallen", "möchten", "zu sein"); when the same
+    # infinitive is listed with forms on another level it is a verb, whatever
+    # kaikki says (e.g. "gefallen"/"wollen" also exist as adjectives there).
+    known_verbs = {_key(r) for r in recs if r["pos"] == "verb"}
     for r in recs:
         if r["pos"] != "candidate":
             continue
         inf = _candidate_verb_inf(r["head"])
+        listed = re.sub(r"\(sich\)|^sich\s+", "", clean(r["head"])).strip()
         other_pos = {"adj", "conj", "prep"}
-        if inf and lookup(index, inf, "verb") and not any(lookup(index, inf, p) for p in other_pos):
+        if not listed.endswith("-") and "verb:" + lemma_key(listed) in known_verbs:
+            inf = listed
+        elif not (inf and lookup(index, inf, "verb") and not any(lookup(index, inf, p) for p in other_pos)):
+            inf = None
+        if inf:
             r["pos"] = "verb"
             v = parse_verb(r["head"])
             r["verb"] = v or {"infinitive": inf, "reflexive": "", "prep": "", "er": "",
@@ -185,8 +206,10 @@ def build(
         if r["pos"] == "noun":
             k += ":" + r["noun"]["article"]
             n = 2
+            # A headword without a plural marker ("der Zuhörer") is the same word.
             while k in merged and merged[k]["level"] == r["level"] and (
-                merged[k]["noun"]["plural"] != r["noun"]["plural"]
+                merged[k]["noun"]["plural"] and r["noun"]["plural"]
+                and merged[k]["noun"]["plural"] != r["noun"]["plural"]
             ):
                 k = re.sub(r"#\d+$", "", k) + f"#{n}"
                 n += 1
@@ -218,7 +241,7 @@ def build(
             e.update(_enrich_other(r, index))
         ov = overrides.get(e["id"])
         if ov:
-            e.update(ov)
+            e.update({k: v for k, v in ov.items() if not k.startswith("_")})
         if not e["examples"]:
             report["no_examples"].append(e["id"])
         out.append(e)

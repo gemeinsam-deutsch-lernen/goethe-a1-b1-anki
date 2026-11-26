@@ -185,6 +185,12 @@ def build_package(data: Path, cache: Path, dist: Path, voice: str, lang: str = "
     cfg = LANG_CONFIG[lang]
     entries = json.loads((data / "entries.json").read_text(encoding="utf-8"))
     tr = load_translations(data / "translations", lang)
+    missing = [e["id"] for e in entries if e["id"] not in tr]
+    if missing:
+        raise SystemExit(
+            f"{len(missing)} entries have no {lang} translation (e.g. {missing[0]}); "
+            f"run `mc validate --lang {lang}`"
+        )
     audio_dir = cache / "audio"
 
     models = {p: _model(p, lang) for p in SUBDECKS}

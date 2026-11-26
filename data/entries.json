@@ -4542,7 +4542,7 @@
   "examples": [
    "Viele Grüße an Ihre Frau.",
    "Mit freundlichen Grüßen",
-   "Liebe Grüße Mit freundlichen Grüßen",
+   "Liebe Grüße",
    "Schönen Gruß an Ihren Mann."
   ],
   "notes": [],
@@ -11712,25 +11712,6 @@
   "regional": ""
  },
  {
-  "id": "other:gefallen",
-  "pos": "other",
-  "level": "A1",
-  "levels": [
-   "A1"
-  ],
-  "heads": [
-   "gefallen"
-  ],
-  "variants": [],
-  "examples": [
-   "Das gefällt mir."
-  ],
-  "notes": [],
-  "word": "gefallen",
-  "pos_label": "Adj.",
-  "regional": ""
- },
- {
   "id": "other:gegen",
   "pos": "other",
   "level": "A1",
@@ -13205,25 +13186,6 @@
   "notes": [],
   "word": "männlich",
   "pos_label": "Adj.",
-  "regional": ""
- },
- {
-  "id": "other:moechten",
-  "pos": "other",
-  "level": "A1",
-  "levels": [
-   "A1"
-  ],
-  "heads": [
-   "möchten"
-  ],
-  "variants": [],
-  "examples": [
-   "Was möchten Sie trinken?"
-  ],
-  "notes": [],
-  "word": "möchten",
-  "pos_label": "",
   "regional": ""
  },
  {
@@ -14986,25 +14948,6 @@
   "regional": ""
  },
  {
-  "id": "other:wollen",
-  "pos": "other",
-  "level": "A1",
-  "levels": [
-   "A1"
-  ],
-  "heads": [
-   "wollen"
-  ],
-  "variants": [],
-  "examples": [
-   "Wollen Sie einen Kaffee trinken?"
-  ],
-  "notes": [],
-  "word": "wollen",
-  "pos_label": "Adj.",
-  "regional": ""
- },
- {
   "id": "other:wunderbar",
   "pos": "other",
   "level": "A1",
@@ -15063,27 +15006,6 @@
   "notes": [],
   "word": "zu",
   "pos_label": "Präp.",
-  "regional": ""
- },
- {
-  "id": "other:zu-sein",
-  "pos": "other",
-  "level": "A1",
-  "levels": [
-   "A1",
-   "A2"
-  ],
-  "heads": [
-   "zu sein",
-   "zu sein"
-  ],
-  "variants": [],
-  "examples": [
-   "Die Tür ist zu."
-  ],
-  "notes": [],
-  "word": "zu sein",
-  "pos_label": "",
   "regional": ""
  },
  {
@@ -17432,6 +17354,40 @@
   "regional": ""
  },
  {
+  "id": "verb:gefallen",
+  "pos": "verb",
+  "level": "A1",
+  "levels": [
+   "A1",
+   "A2",
+   "B1"
+  ],
+  "heads": [
+   "gefallen",
+   "gefallen, gefällt, hat gefallen",
+   "gefallen, gefällt, gefiel, hat gefallen"
+  ],
+  "variants": [],
+  "examples": [
+   "Das gefällt mir.",
+   "Das Bild gefällt mir.",
+   "Wie gefällt es Ihnen in Berlin?",
+   "Wie gefällt es Ihnen hier?",
+   "Der Pullover gefällt mir gut."
+  ],
+  "notes": [],
+  "infinitive": "gefallen",
+  "er": "gefällt",
+  "praeteritum": "gefiel",
+  "aux": "hat",
+  "partizip2": "gefallen",
+  "strong": true,
+  "verb_class": "class 7 strong",
+  "prep": "",
+  "verb_note": "",
+  "regional": ""
+ },
+ {
   "id": "verb:gehen",
   "pos": "verb",
   "level": "A1",
@@ -18584,6 +18540,38 @@
   "regional": ""
  },
  {
+  "id": "verb:moechten",
+  "pos": "verb",
+  "level": "A1",
+  "levels": [
+   "A1",
+   "A2",
+   "B1"
+  ],
+  "heads": [
+   "möchten",
+   "möchten, möchte, mochte, hat gemocht",
+   "möchten, möchte, mochte, hat gemocht"
+  ],
+  "variants": [],
+  "examples": [
+   "Was möchten Sie trinken?",
+   "Möchtest du auch einen Kaffee?",
+   "Im Sommer möchten wir gern ans Meer fahren."
+  ],
+  "notes": [],
+  "infinitive": "möchten",
+  "er": "möchte",
+  "praeteritum": "mochte",
+  "aux": "hat",
+  "partizip2": "gemocht",
+  "strong": false,
+  "verb_class": "",
+  "prep": "",
+  "verb_note": "",
+  "regional": ""
+ },
+ {
   "id": "verb:moegen",
   "pos": "verb",
   "level": "A1",
@@ -19143,7 +19131,6 @@
    "Möchtest du einen Film sehen?",
    "Ich habe Lisa lange nicht gesehen. Ist sie im Urlaub?",
    "Darf ich mal Ihren Ausweis sehen?",
-   "Warst du schon mal an der Nord/Ostsee?",
    "Ich sehe nicht gut. Ich brauche eine Brille.",
    "Ich habe einen schönen Film gesehen.",
    "Wir haben uns lange nicht gesehen.",
@@ -20046,6 +20033,41 @@
   "regional": ""
  },
  {
+  "id": "verb:wollen",
+  "pos": "verb",
+  "level": "A1",
+  "levels": [
+   "A1",
+   "A2",
+   "B1"
+  ],
+  "heads": [
+   "wollen",
+   "wollen, will, wollte, hat gewollt (hat wollen als Modalverb)",
+   "wollen, will, wollte, hat gewollt (hat wollen als Modalverb)"
+  ],
+  "variants": [],
+  "examples": [
+   "Wollen Sie einen Kaffee trinken?",
+   "Peter will Arzt werden.",
+   "Wollen Sie einen Kaffee?",
+   "Meine Eltern wollten nicht mitfahren.",
+   "Was hast du als Kind werden wollen?",
+   "Tut mir leid. Ich wollte das nicht."
+  ],
+  "notes": [],
+  "infinitive": "wollen",
+  "er": "will",
+  "praeteritum": "wollte",
+  "aux": "hat",
+  "partizip2": "gewollt",
+  "strong": true,
+  "verb_class": "preterite-present",
+  "prep": "",
+  "verb_note": "hat wollen als Modalverb",
+  "regional": ""
+ },
+ {
   "id": "verb:zahlen",
   "pos": "verb",
   "level": "A1",
@@ -20075,6 +20097,38 @@
   "partizip2": "gezahlt",
   "strong": false,
   "verb_class": "weak",
+  "prep": "",
+  "verb_note": "",
+  "regional": ""
+ },
+ {
+  "id": "verb:zu-sein",
+  "pos": "verb",
+  "level": "A1",
+  "levels": [
+   "A1",
+   "A2",
+   "B1"
+  ],
+  "heads": [
+   "zu sein",
+   "zu sein",
+   "zu sein, ist zu, war zu, ist zu gewesen"
+  ],
+  "variants": [],
+  "examples": [
+   "Die Tür ist zu.",
+   "Am Sonntag sind die meisten Läden zu.",
+   "Das Fenster war nicht zu."
+  ],
+  "notes": [],
+  "infinitive": "zu sein",
+  "er": "ist zu",
+  "praeteritum": "war zu",
+  "aux": "ist",
+  "partizip2": "zu gewesen",
+  "strong": true,
+  "verb_class": "irregular",
   "prep": "",
   "verb_note": "",
   "regional": ""
@@ -22234,8 +22288,7 @@
   ],
   "variants": [],
   "examples": [
-   "Wer macht bei euch den Haushalt? - Meine Frau und ich machen den Haushalt zusammen:",
-   "Ich wasche die Wäsche und sie putzt und räumt auf.",
+   "Wer macht bei euch den Haushalt? - Meine Frau und ich machen den Haushalt zusammen: Ich wasche die Wäsche und sie putzt und räumt auf.",
    "Ich kümmere mich um den Haushalt, d. h. ich putze, wasche, koche etc."
   ],
   "notes": [],
@@ -23497,6 +23550,36 @@
   "sg_only": false,
   "pl_only": false,
   "genitive": "der Mailbox",
+  "feminine": "",
+  "regional": ""
+ },
+ {
+  "id": "noun:mal:das",
+  "pos": "noun",
+  "level": "A2",
+  "levels": [
+   "A2",
+   "B1"
+  ],
+  "heads": [
+   "das Mal, -e",
+   "das Mal, -e"
+  ],
+  "variants": [],
+  "examples": [
+   "Das erste Mal war ich vor fünf Jahren in England.",
+   "Tschüss, bis zum nächsten Mal!",
+   "Das machen wir nächstes Mal.",
+   "Bis zum nächsten Mal."
+  ],
+  "notes": [],
+  "article": "das",
+  "article2": "",
+  "word": "Mal",
+  "plural": "die Male",
+  "sg_only": false,
+  "pl_only": false,
+  "genitive": "des Males/Mals",
   "feminine": "",
   "regional": ""
  },
@@ -29974,24 +30057,24 @@
   "regional": ""
  },
  {
-  "id": "other:mal-das-mal",
+  "id": "other:mal",
   "pos": "other",
   "level": "A2",
   "levels": [
-   "A2"
+   "A2",
+   "B1"
   ],
   "heads": [
-   "mal / das Mal"
+   "mal",
+   "mal"
   ],
   "variants": [],
   "examples": [
-   "Sag mal, wie gefällt dir mein neues Kleid?",
-   "Das erste Mal war ich vor fünf Jahren in England.",
-   "Tschüss, bis zum nächsten Mal!"
+   "Sag mal, wie gefällt dir mein neues Kleid?"
   ],
   "notes": [],
-  "word": "mal / das Mal",
-  "pos_label": "",
+  "word": "mal",
+  "pos_label": "Adv.",
   "regional": ""
  },
  {
@@ -33206,10 +33289,10 @@
   ],
   "notes": [],
   "infinitive": "dabei sein",
-  "er": "war dabei",
-  "praeteritum": "ist dabei gewesen",
+  "er": "ist dabei",
+  "praeteritum": "war dabei",
   "aux": "ist",
-  "partizip2": "dabei",
+  "partizip2": "dabei gewesen",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -33232,10 +33315,10 @@
   ],
   "notes": [],
   "infinitive": "dafür/dagegen sein",
-  "er": "war dafür/dagegen",
-  "praeteritum": "ist dafür/dagegen gewesen",
+  "er": "ist dafür/dagegen",
+  "praeteritum": "war dafür/dagegen",
   "aux": "ist",
-  "partizip2": "dafür/dagegen",
+  "partizip2": "dafür/dagegen gewesen",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -33354,10 +33437,10 @@
   ],
   "notes": [],
   "infinitive": "einverstanden sein",
-  "er": "war einverstanden",
-  "praeteritum": "ist einverstanden gewesen",
+  "er": "ist einverstanden",
+  "praeteritum": "war einverstanden",
   "aux": "ist",
-  "partizip2": "einverstanden",
+  "partizip2": "einverstanden gewesen",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -33410,10 +33493,10 @@
   ],
   "notes": [],
   "infinitive": "erkältet sein",
-  "er": "war erkältet",
-  "praeteritum": "ist erkältet gewesen",
+  "er": "ist erkältet",
+  "praeteritum": "war erkältet",
   "aux": "ist",
-  "partizip2": "erkältet",
+  "partizip2": "erkältet gewesen",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -33436,10 +33519,10 @@
   ],
   "notes": [],
   "infinitive": "erlaubt sein",
-  "er": "war erlaubt",
-  "praeteritum": "ist erlaubt gewesen",
+  "er": "ist erlaubt",
+  "praeteritum": "war erlaubt",
   "aux": "ist",
-  "partizip2": "erlaubt",
+  "partizip2": "erlaubt gewesen",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -33527,10 +33610,10 @@
   ],
   "notes": [],
   "infinitive": "fertig sein",
-  "er": "war fertig",
-  "praeteritum": "ist fertig gewesen",
+  "er": "ist fertig",
+  "praeteritum": "war fertig",
   "aux": "ist",
-  "partizip2": "fertig",
+  "partizip2": "fertig gewesen",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -33553,10 +33636,10 @@
   ],
   "notes": [],
   "infinitive": "fit sein",
-  "er": "war fit",
-  "praeteritum": "ist fit gewesen",
+  "er": "ist fit",
+  "praeteritum": "war fit",
   "aux": "ist",
-  "partizip2": "fit",
+  "partizip2": "fit gewesen",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -33592,37 +33675,6 @@
   "regional": ""
  },
  {
-  "id": "verb:gefallen",
-  "pos": "verb",
-  "level": "A2",
-  "levels": [
-   "A2",
-   "B1"
-  ],
-  "heads": [
-   "gefallen, gefällt, hat gefallen",
-   "gefallen, gefällt, gefiel, hat gefallen"
-  ],
-  "variants": [],
-  "examples": [
-   "Das Bild gefällt mir.",
-   "Wie gefällt es Ihnen in Berlin?",
-   "Wie gefällt es Ihnen hier?",
-   "Der Pullover gefällt mir gut."
-  ],
-  "notes": [],
-  "infinitive": "gefallen",
-  "er": "gefällt",
-  "praeteritum": "gefiel",
-  "aux": "hat",
-  "partizip2": "gefallen",
-  "strong": true,
-  "verb_class": "class 7 strong",
-  "prep": "",
-  "verb_note": "",
-  "regional": ""
- },
- {
   "id": "verb:gueltig-sein",
   "pos": "verb",
   "level": "A2",
@@ -33638,10 +33690,10 @@
   ],
   "notes": [],
   "infinitive": "gültig sein",
-  "er": "war gültig",
-  "praeteritum": "ist gültig gewesen",
+  "er": "ist gültig",
+  "praeteritum": "war gültig",
   "aux": "ist",
-  "partizip2": "gültig",
+  "partizip2": "gültig gewesen",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -33955,19 +34007,24 @@
   "pos": "verb",
   "level": "A2",
   "levels": [
-   "A2"
+   "A2",
+   "B1"
   ],
   "heads": [
-   "leidtun/leid tun, tut leid, hat leidgetan"
+   "leidtun/leid tun, tut leid, hat leidgetan",
+   "leidtun/leid tun, tut leid, tat leid, hat leidgetan"
   ],
   "variants": [],
   "examples": [
-   "Es tut mir leid, dass ich nicht kommen kann."
+   "Es tut mir leid, dass ich nicht kommen kann.",
+   "Die Frau tut mir leid.",
+   "Wie komme ich zum Bahnhof? - Tut mir leid, das weiß ich nicht.",
+   "Es tut mir leid, dass ich Ihnen nicht helfen kann."
   ],
   "notes": [],
   "infinitive": "leidtun/leid tun",
   "er": "tut leid",
-  "praeteritum": "",
+  "praeteritum": "tat leid",
   "aux": "hat",
   "partizip2": "leidgetan",
   "strong": true,
@@ -34153,36 +34210,6 @@
   "partizip2": "gemerkt",
   "strong": false,
   "verb_class": "weak",
-  "prep": "",
-  "verb_note": "",
-  "regional": ""
- },
- {
-  "id": "verb:moechten",
-  "pos": "verb",
-  "level": "A2",
-  "levels": [
-   "A2",
-   "B1"
-  ],
-  "heads": [
-   "möchten, möchte, mochte, hat gemocht",
-   "möchten, möchte, mochte, hat gemocht"
-  ],
-  "variants": [],
-  "examples": [
-   "Was möchten Sie trinken?",
-   "Möchtest du auch einen Kaffee?",
-   "Im Sommer möchten wir gern ans Meer fahren."
-  ],
-  "notes": [],
-  "infinitive": "möchten",
-  "er": "möchte",
-  "praeteritum": "mochte",
-  "aux": "hat",
-  "partizip2": "gemocht",
-  "strong": false,
-  "verb_class": "",
   "prep": "",
   "verb_note": "",
   "regional": ""
@@ -34599,10 +34626,10 @@
   ],
   "notes": [],
   "infinitive": "recht haben",
-  "er": "hatte recht",
-  "praeteritum": "hat recht gehabt",
+  "er": "hat recht",
+  "praeteritum": "hatte recht",
   "aux": "hat",
-  "partizip2": "recht",
+  "partizip2": "recht gehabt",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -35568,10 +35595,10 @@
   ],
   "notes": [],
   "infinitive": "unterwegs sein",
-  "er": "war unterwegs",
-  "praeteritum": "ist unterwegs gewesen",
+  "er": "ist unterwegs",
+  "praeteritum": "war unterwegs",
   "aux": "ist",
-  "partizip2": "unterwegs",
+  "partizip2": "unterwegs gewesen",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -35594,10 +35621,10 @@
   ],
   "notes": [],
   "infinitive": "verabredet sein",
-  "er": "war verabredet",
-  "praeteritum": "ist verabredet gewesen",
+  "er": "ist verabredet",
+  "praeteritum": "war verabredet",
   "aux": "ist",
-  "partizip2": "verabredet",
+  "partizip2": "verabredet gewesen",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -35968,39 +35995,6 @@
   "regional": ""
  },
  {
-  "id": "verb:wollen",
-  "pos": "verb",
-  "level": "A2",
-  "levels": [
-   "A2",
-   "B1"
-  ],
-  "heads": [
-   "wollen, will, wollte, hat gewollt (hat wollen als Modalverb)",
-   "wollen, will, wollte, hat gewollt (hat wollen als Modalverb)"
-  ],
-  "variants": [],
-  "examples": [
-   "Wollen Sie einen Kaffee trinken?",
-   "Peter will Arzt werden.",
-   "Wollen Sie einen Kaffee?",
-   "Meine Eltern wollten nicht mitfahren.",
-   "Was hast du als Kind werden wollen?",
-   "Tut mir leid. Ich wollte das nicht."
-  ],
-  "notes": [],
-  "infinitive": "wollen",
-  "er": "will",
-  "praeteritum": "wollte",
-  "aux": "hat",
-  "partizip2": "gewollt",
-  "strong": true,
-  "verb_class": "preterite-present",
-  "prep": "",
-  "verb_note": "hat wollen als Modalverb",
-  "regional": ""
- },
- {
   "id": "verb:waehlen",
   "pos": "verb",
   "level": "A2",
@@ -36327,6 +36321,7 @@
    "B1"
   ],
   "heads": [
+   "das/der (Schlag-)Obers (A) → D: (Schlag-)Sahne; CH: (Schlag-)Rahm",
    "das/der (Schlag-)Obers (A) → D: (Schlag-)Sahne; CH: (Schlag-)Rahm"
   ],
   "variants": [],
@@ -36336,31 +36331,6 @@
   "notes": [],
   "article": "das",
   "article2": "der",
-  "word": "(Schlag-)Obers",
-  "plural": "",
-  "sg_only": true,
-  "pl_only": false,
-  "genitive": "",
-  "feminine": "",
-  "regional": "(A) → D: (Schlag-)Sahne; CH: (Schlag-)Rahm"
- },
- {
-  "id": "noun:obers:der",
-  "pos": "noun",
-  "level": "B1",
-  "levels": [
-   "B1"
-  ],
-  "heads": [
-   "der/das (Schlag-)Obers (A) → D: (Schlag-)Sahne; CH: (Schlag-)Rahm"
-  ],
-  "variants": [],
-  "examples": [
-   "Ich hätte gern ein Stück Torte mit Schlagobers."
-  ],
-  "notes": [],
-  "article": "der",
-  "article2": "das",
   "word": "(Schlag-)Obers",
   "plural": "",
   "sg_only": true,
@@ -42050,7 +42020,7 @@
   "article": "der",
   "article2": "",
   "word": "Fasching",
-  "plural": "die Fasching",
+  "plural": "die Faschinge/Faschings",
   "sg_only": false,
   "pl_only": false,
   "genitive": "des Faschings",
@@ -47499,7 +47469,9 @@
    "die Kriminalpolizei"
   ],
   "variants": [],
-  "examples": [],
+  "examples": [
+   "Ein Nachbar von uns arbeitet bei der Kriminalpolizei."
+  ],
   "notes": [],
   "article": "die",
   "article2": "",
@@ -48808,33 +48780,6 @@
   "sg_only": false,
   "pl_only": false,
   "genitive": "der Mahnung",
-  "feminine": "",
-  "regional": ""
- },
- {
-  "id": "noun:mal:das",
-  "pos": "noun",
-  "level": "B1",
-  "levels": [
-   "B1"
-  ],
-  "heads": [
-   "das Mal, -e"
-  ],
-  "variants": [],
-  "examples": [
-   "Das machen wir nächstes Mal.",
-   "Das erste Mal war ich vor fünf Jahren in England.",
-   "Bis zum nächsten Mal."
-  ],
-  "notes": [],
-  "article": "das",
-  "article2": "",
-  "word": "Mal",
-  "plural": "die Male",
-  "sg_only": false,
-  "pl_only": false,
-  "genitive": "des Males/Mals",
   "feminine": "",
   "regional": ""
  },
@@ -50491,26 +50436,28 @@
   "regional": ""
  },
  {
-  "id": "noun:nord:die",
+  "id": "noun:nordsee:die",
   "pos": "noun",
   "level": "B1",
   "levels": [
    "B1"
   ],
   "heads": [
-   "die Nord-/Ostsee"
+   "die Nordsee (Sg.)"
   ],
   "variants": [],
-  "examples": [],
+  "examples": [
+   "Warst du schon mal an der Nordsee?"
+  ],
   "notes": [],
   "article": "die",
   "article2": "",
-  "word": "Nord-",
+  "word": "Nordsee",
   "plural": "",
   "sg_only": true,
   "pl_only": false,
-  "genitive": "der Nord-",
-  "feminine": "Ostsee",
+  "genitive": "der Nordsee",
+  "feminine": "",
   "regional": ""
  },
  {
@@ -50865,6 +50812,31 @@
   "sg_only": false,
   "pl_only": false,
   "genitive": "des Originals",
+  "feminine": "",
+  "regional": ""
+ },
+ {
+  "id": "noun:ostsee:die",
+  "pos": "noun",
+  "level": "B1",
+  "levels": [
+   "B1"
+  ],
+  "heads": [
+   "die Ostsee (Sg.)"
+  ],
+  "variants": [],
+  "examples": [
+   "Warst du schon mal an der Ostsee?"
+  ],
+  "notes": [],
+  "article": "die",
+  "article2": "",
+  "word": "Ostsee",
+  "plural": "",
+  "sg_only": true,
+  "pl_only": false,
+  "genitive": "der Ostsee",
   "feminine": "",
   "regional": ""
  },
@@ -55072,7 +55044,9 @@
   "heads": [
    "der Steward, -s"
   ],
-  "variants": [],
+  "variants": [
+   "die Stewardess, -en"
+  ],
   "examples": [
    "Die Stewardess bringt das Mittagessen."
   ],
@@ -55084,29 +55058,6 @@
   "sg_only": false,
   "pl_only": false,
   "genitive": "",
-  "feminine": "",
-  "regional": ""
- },
- {
-  "id": "noun:stewardess:die",
-  "pos": "noun",
-  "level": "B1",
-  "levels": [
-   "B1"
-  ],
-  "heads": [
-   "die Stewardess, -en"
-  ],
-  "variants": [],
-  "examples": [],
-  "notes": [],
-  "article": "die",
-  "article2": "",
-  "word": "Stewardess",
-  "plural": "die Stewardessen",
-  "sg_only": false,
-  "pl_only": false,
-  "genitive": "der Stewardess",
   "feminine": "",
   "regional": ""
  },
@@ -59896,29 +59847,7 @@
    "B1"
   ],
   "heads": [
-   "der Zuhörer"
-  ],
-  "variants": [],
-  "examples": [],
-  "notes": [],
-  "article": "der",
-  "article2": "",
-  "word": "Zuhörer",
-  "plural": "die Zuhörer",
-  "sg_only": false,
-  "pl_only": false,
-  "genitive": "des Zuhörers",
-  "feminine": "",
-  "regional": ""
- },
- {
-  "id": "noun:zuhoerer:der-2",
-  "pos": "noun",
-  "level": "B1",
-  "levels": [
-   "B1"
-  ],
-  "heads": [
+   "der Zuhörer",
    "der Zuhörer, -"
   ],
   "variants": [
@@ -64544,9 +64473,7 @@
    "Kriminal-"
   ],
   "variants": [],
-  "examples": [
-   "Ein Nachbar von uns arbeitet bei der Kriminalpolizei."
-  ],
+  "examples": [],
   "notes": [],
   "word": "Kriminal-",
   "pos_label": "",
@@ -64809,23 +64736,6 @@
   "notes": [],
   "word": "mager",
   "pos_label": "Adj.",
-  "regional": ""
- },
- {
-  "id": "other:mal",
-  "pos": "other",
-  "level": "B1",
-  "levels": [
-   "B1"
-  ],
-  "heads": [
-   "mal"
-  ],
-  "variants": [],
-  "examples": [],
-  "notes": [],
-  "word": "mal",
-  "pos_label": "Adv.",
   "regional": ""
  },
  {
@@ -70023,10 +69933,10 @@
   ],
   "notes": [],
   "infinitive": "anhaben",
-  "er": "hatte an",
-  "praeteritum": "hat angehabt",
+  "er": "hat an",
+  "praeteritum": "hatte an",
   "aux": "hat",
-  "partizip2": "an",
+  "partizip2": "angehabt",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -72969,11 +72879,11 @@
   "er": "erschrickt",
   "praeteritum": "erschrak",
   "aux": "ist",
-  "partizip2": "erschrocken/jdn. erschrecken",
+  "partizip2": "erschrocken",
   "strong": true,
   "verb_class": "class 4 strong",
   "prep": "",
-  "verb_note": "",
+  "verb_note": "jdn. erschrecken: erschreckt, erschreckte, hat erschreckt",
   "regional": ""
  },
  {
@@ -74883,34 +74793,6 @@
   "partizip2": "gelandet",
   "strong": false,
   "verb_class": "weak",
-  "prep": "",
-  "verb_note": "",
-  "regional": ""
- },
- {
-  "id": "verb:leid-tun",
-  "pos": "verb",
-  "level": "B1",
-  "levels": [
-   "B1"
-  ],
-  "heads": [
-   "leid tun, tut leid, tat leid, hat leidgetan"
-  ],
-  "variants": [],
-  "examples": [
-   "Die Frau tut mir leid.",
-   "Wie komme ich zum Bahnhof? - Tut mir leid, das weiß ich nicht.",
-   "Es tut mir leid, dass ich Ihnen nicht helfen kann."
-  ],
-  "notes": [],
-  "infinitive": "leid tun",
-  "er": "tut leid",
-  "praeteritum": "tat leid",
-  "aux": "hat",
-  "partizip2": "leidgetan",
-  "strong": true,
-  "verb_class": "irregular",
   "prep": "",
   "verb_note": "",
   "regional": ""
@@ -78646,10 +78528,10 @@
   ],
   "notes": [],
   "infinitive": "vorhaben",
-  "er": "hatte vor",
-  "praeteritum": "hat vorgehabt",
+  "er": "hat vor",
+  "praeteritum": "hatte vor",
   "aux": "hat",
-  "partizip2": "vor",
+  "partizip2": "vorgehabt",
   "strong": true,
   "verb_class": "irregular",
   "prep": "",
@@ -79021,33 +78903,6 @@
   "partizip2": "zerstört",
   "strong": false,
   "verb_class": "weak",
-  "prep": "",
-  "verb_note": "",
-  "regional": ""
- },
- {
-  "id": "verb:zu-sein",
-  "pos": "verb",
-  "level": "B1",
-  "levels": [
-   "B1"
-  ],
-  "heads": [
-   "zu sein, ist zu, war zu, ist zu gewesen"
-  ],
-  "variants": [],
-  "examples": [
-   "Am Sonntag sind die die meisten Läden zu.",
-   "Das Fenster war nicht zu."
-  ],
-  "notes": [],
-  "infinitive": "zu sein",
-  "er": "war zu",
-  "praeteritum": "ist zu gewesen",
-  "aux": "ist",
-  "partizip2": "zu",
-  "strong": true,
-  "verb_class": "irregular",
   "prep": "",
   "verb_note": "",
   "regional": ""

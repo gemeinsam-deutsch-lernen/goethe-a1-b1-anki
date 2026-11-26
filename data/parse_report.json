@@ -1,8 +1,8 @@
 {
  "kaikki_missing": [
+  "verb:möchten",
   "noun:(E-)Mail",
   "noun:Fundsachen",
-  "verb:möchten",
   "noun:Bancomat",
   "noun:Bankomat-Karte",
   "noun:e-card",
@@ -24,8 +24,8 @@
   "noun:(Schlag-)Rahm",
   "noun:(Back-)Rohr",
   "noun:(Schlag-)Sahne",
-  "noun:(Schlag-)Obers",
-  "noun:Nord-",
+  "noun:Nordsee",
+  "noun:Ostsee",
   "noun:Serviceangestellte",
   "noun:Steward",
   "noun:Umtausch",
@@ -50,16 +50,12 @@
   "other:elektro-prefix",
   "other:gross-prefix",
   "other:haupt-prefix",
-  "noun:zuhoerer:der",
   "other:irgend-prefix",
-  "noun:kriminalpolizei:die",
-  "other:mal",
+  "other:kriminal-prefix",
   "other:not-prefix",
   "other:oeko",
   "other:rueck-prefix",
-  "noun:nord:die",
   "other:sonder-prefix",
-  "noun:stewardess:die",
   "other:ueber-prefix"
  ]
 }

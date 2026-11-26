@@ -106,4 +106,6 @@ def validate(entries_path: Path, trans_root: Path, lang: str) -> list[str]:
                 problems.append(f'bad-ex    {e["id"]}: {s!r}')
         if lang == "uk" and re.search(r"[ЫыЭэЁёЪъ]", t.get(lang, "") + " ".join(rx)):
             problems.append(f'russian?  {e["id"]}: contains Ы/Э/Ё/Ъ')
+    ids = {e["id"] for e in entries}
+    problems += [f"stale     {i}: not in entries.json" for i in sorted(set(tr) - ids)]
     return problems

@@ -1,0 +1,13 @@
+{
+  "_comment": "Field overrides applied to the final entry, keyed by entry id.",
+  "noun:fasching:der": {
+    "_note": "PDF marks the plural as '-'; Duden/Wiktionary: Faschinge, Faschings",
+    "plural": "die Faschinge/Faschings"
+  },
+  "verb:erschrecken": {
+    "_note": "PDF lists two verbs in one head: intransitive (strong) and transitive (weak)",
+    "aux": "ist",
+    "partizip2": "erschrocken",
+    "verb_note": "jdn. erschrecken: erschreckt, erschreckte, hat erschreckt"
+  }
+}

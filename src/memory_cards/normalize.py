@@ -151,7 +151,9 @@ def parse_verb(head: str) -> dict | None:
         return None
     forms = parts[1:]
     forms = [re.sub(r"^es\s+", "", p) for p in forms]  # "es regnet", "es hat geregnet"
-    perfekt = next((p for p in forms if re.match(r"(hat|ist)(/(hat|ist))?\s", p)), "")
+    # Perfekt is the last form; search from the end so "zu sein, ist zu, war zu,
+    # ist zu gewesen" does not take the er-form "ist zu" for the Perfekt.
+    perfekt = next((p for p in reversed(forms) if re.match(r"(hat|ist)(/(hat|ist))?\s", p)), "")
     if not perfekt and forms and re.match(r"ge\w+$", forms[-1]):
         perfekt = forms[-1]  # PDF typo: "gießen, gießt, goss, gegossen"
     others = [p for p in forms if p != perfekt]

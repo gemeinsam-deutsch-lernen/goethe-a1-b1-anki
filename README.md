@@ -110,7 +110,9 @@ uv run pytest
    page into headword/example columns by x position (two columns per page for A2/B1).
    Wrapped headwords, wrapped verb forms, feminine forms sharing an example, numbered B1
    examples and sentences broken across columns are reassembled heuristically.
-2. `data/fixes.json` — manual corrections for the few layout/typo cases heuristics cannot resolve.
+2. `data/fixes.json` — manual corrections for the few layout/typo cases heuristics cannot resolve
+   (replace a headword or its examples, split or skip an entry); `data/overrides.json` — field
+   overrides on the final entry (e.g. a plural the PDF gets wrong).
 3. `entries.py` — classifies noun/verb/other, merges the three levels (lowest level wins,
    examples are unioned) and enriches grammar from Wiktionary via the
    [kaikki.org](https://kaikki.org/dictionary/German/) extract: genitive, missing plurals,

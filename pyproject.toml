@@ -1,7 +1,7 @@
 [project]
 name = "memory-cards"
 version = "0.1.0"
-description = "Anki deck builder for the Goethe-Institut A1-B1 word lists (DE<->RU)"
+description = "Anki deck builder for the Goethe-Institut A1-B1 word lists (DE<->RU/UK)"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
